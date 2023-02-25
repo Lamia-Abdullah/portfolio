@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { AiFillCheckCircle } from "react-icons/ai";
-import { projects } from "../information/data";
-import { skills } from "../information/data";
+import { projects } from "../public/data";
+import { skills } from "../public/data";
 
 export default function Home() {
   return (
