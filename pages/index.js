@@ -3,7 +3,7 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { projects } from "../public/data";
 import { skills } from "../public/data";
-
+import { motion } from "framer-motion";
 export default function Home() {
   return (
     <>
@@ -52,18 +52,23 @@ export default function Home() {
                   skills .....
                 </p>
               </div>
-              <div className="flex flex-wrap xl:w-1/3 lg:w-3/4 mx-auto ">
-                {skills.map((skills) => (
-                  <div key={skills} className="p-2 sm:w-1/2 w-full ">
-                    <div className="bg-gry-800 rounded flex p-4 h-full items-center bg-gray-900">
-                      <AiFillCheckCircle className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" />
-                      <span className=" title-font font-medium text-white">
-                        {skills}
-                      </span>
+              <motion.div
+                whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+                transitions={{ duration: 1, type: "tween" }}
+              >
+                <div className="flex flex-wrap xl:w-1/3 lg:w-3/4 mx-auto ">
+                  {skills.map((skills) => (
+                    <div key={skills} className="p-2 sm:w-1/2 w-full ">
+                      <div className="bg-gry-800 rounded flex p-4 h-full items-center bg-gray-900">
+                        <AiFillCheckCircle className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" />
+                        <span className=" title-font font-medium text-white">
+                          {skills}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </section>
 
@@ -105,7 +110,6 @@ export default function Home() {
               </div>
             </div>
           </section>
-
         </main>
       </div>
     </>
